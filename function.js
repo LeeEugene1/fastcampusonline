@@ -28,7 +28,12 @@ console.log(hello3(10));
 // var name = "Brendan";
 // console.log(`Yo, ${name}!`);
 
+//익명함수
 const hello4 = (age) =>{
     return `유민의 나이는 ${age}`
 }
 console.log(hello4(26))
+
+//ES6
+const hello5 = name => `hello yaaaa ${name}`;
+console.log(hello5('유진'));
