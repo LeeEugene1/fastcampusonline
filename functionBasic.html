@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //파라미터값 숫자
+        function add(a, b) {
+            return a + b;
+        }
+        const sum = add(1, 2);
+        console.log(sum)
+
+        //파라미터값 문자
+        function hello(name){
+            console.log('hello '+name+'!');
+        }
+        hello('dubaiyu');
+
+        //(ES6)파라미터값 문자
+        function hello2(name){
+            return `hello ${name}!`;
+        }
+        const result = hello2('dubai')
+        console.log(result)
+
+        //성적계산하기
+        function score(number){
+            if(number === 100){
+                return 'A+';
+            }else if(number >= 90){
+                return 'A';
+            }else if(number >= 80){
+                return 'B+'
+            }else{
+                return 'B'
+            }
+        }
+        const grade = score(89)
+        console.log(grade)
+
+        //ES6 화살표를 통한 간결한 함수
+        const add2 = (a,b) => a + b;
+        const sum2 = add2(7,3)
+        console.log(sum2)
+    </script>
+</body>
+</html>
