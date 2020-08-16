@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function work(){
+            //현재날짜를 숫자형태로 표시하는 함수
+            const start = Date.now();
+            for(let i = 0; i<1000000000; i++){
+
+            }
+            const end = Date.now();
+            console.log(end - start + 'ms');
+        }
+        work();
+        console.log('작업완료')
+        //work함수실행후 작업이 끝난다음에 '작업완료' 출력
+        // 만약 작업이 실행되는동안에 다른작업들을 하고싶으면 비동기처리가필요함
+    </script>
+</body>
+</html>
