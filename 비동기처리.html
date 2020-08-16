@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // 비동기처리
+        function work(callback){
+            setTimeout(()=>{
+                const start = Date.now();
+                for(let i = 0; i<1000000000; i++){
+
+                }
+                const end = Date.now()
+                console.log(end - start + 'ms')
+                callback(end-start)//앞에작업이 끝난 이후에 콜백함수호출
+            },0)//0ms후에진행된다는뜻
+        }
+
+        console.log('작업시작')
+        work((ms)=>{
+            console.log('작업끝')
+            console.log(ms+'ms 걸림')
+        });
+        console.log('다음작업')
+    </script>
+</body>
+</html>

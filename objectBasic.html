@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체는 어떠한 값을 선언할때 하나의 이름에 여러종류의 값을 넣을수있게 해준다.
+        //객체안에 key:value값을 설정할수 있다.
+        //객체안에 함수를 넣을 수있다.
+        const dog = {
+            name: '멍멍이',
+            type: 'dog',
+            age:2,
+            cute:true,
+            sound:'멍멍',
+            //say:function(){
+            // }
+            say(){
+                console.log(this.sound)
+            }
+            //화살표함수는 this가 뭔지몰라서 undefined뜸
+        }
+
+        dog.say()//멍멍
+        const cat = {
+            name: '나비',
+            type: 'cat',
+            age:5
+        }
+
+        console.log(dog)
+        console.log(cat)
+
+        //비구조할당 맛보기
+        const {name} = dog
+        console.log(name)
+
+        //함수의 파라미터에서도 객체 사용가능
+        function print(animal){
+            const text = `${animal.name}의 나이는 ${animal.age}살이다`
+            console.log(text)
+        }
+        print(dog)
+        print(cat)
+
+        //위의 animal이반복되는데 ES6의 비구조할당을 통해 쉽게표현가능(객체구조분해)
+        // function es6Division(animal){
+        //     const {name, type, age} = animal
+        //     const text = `${name}는 ${type}이고 나이는 ${age}살이다`
+        //     console.log(text)
+        // }
+
+        function es6Division({name, type, age}){
+            const text = `${name}는 ${type}이고 나이는 ${age}살이다`
+            console.log(text)
+        }
+
+        es6Division(dog)
+        es6Division(cat)
+
+    </script>
+</body>
+</html>
