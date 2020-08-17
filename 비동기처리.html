@@ -7,26 +7,43 @@
 </head>
 <body>
     <script>
-        
         // 비동기처리
-        function work(callback){
-            setTimeout(()=>{
+        //setTimeout : 몇초뒤에 실행한다는뜻
+        function work(){
+            setTimeout(() => {
                 const start = Date.now();
-                for(let i = 0; i<1000000000; i++){
+                for(let i=0; i<1000000000; i++){
 
                 }
-                const end = Date.now()
+                const end = Date.now();
                 console.log(end - start + 'ms')
-                callback(end-start)//앞에작업이 끝난 이후에 콜백함수호출
-            },0)//0ms후에진행된다는뜻
-        }
-
+                
+            }, 0);//0초후에 이작업을 실행하겠다. 1000ms = 1s
+            }
         console.log('작업시작')
-        work((ms)=>{
-            console.log('작업끝')
-            console.log(ms+'ms 걸림')
-        });
-        console.log('다음작업')
+        work();
+        console.log('작업완료')
+        //비동기 -> 작업시작 - (work함수작동중) - 작업완료 - work()마치고 출력
+
+        //callback함수 work함수가 끝난뒤(특정함수) 어떤함수를 출력하고싶다? 
+        // function work(callback){
+        //     setTimeout(()=>{
+        //         const start = Date.now();
+        //         for(let i = 0; i<1000000000; i++){
+
+        //         }
+        //         const end = Date.now()
+        //         console.log(end - start + 'ms')
+        //         callback(end-start)//앞에작업이 끝난 이후에 콜백함수호출
+        //     },0)//0ms후에진행된다는뜻
+        // }
+
+        // console.log('작업시작')
+        // work((ms)=>{
+        //     console.log('작업끝')
+        //     console.log(ms+'ms 걸림')
+        // });
+        // console.log('다음작업')
     </script>
 </body>
 </html>

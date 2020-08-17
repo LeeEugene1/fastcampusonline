@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // promise는 ES6스펙추가. 비동기작업을 수월하게하는것. callback함수의 난잡함 해결
+        //성공하면 resolve 실패하면 reject
+        const myResolve = new Promise((resolve, reject) => {
+            setTimeout(()=>{
+                resolve('result')
+            },1000)
+        })
+        myResolve.then(result => {
+            console.log(result)
+        })
+
+        //실패하면
+        const myReject = new Promise((resolve, reject) =>{
+            setTimeout(()=>{
+                reject(new Error());
+            }, 1000)
+        })
+        myReject.then(result => {
+            console.log(result)
+        }).catch(e => {
+            console.error(e)
+        })
+
+        //promise then 은 에러를잡기 힘들다.
+</script>
+</body>
+</html>

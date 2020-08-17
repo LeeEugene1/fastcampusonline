@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // falsy만 기억해두면 나머지는 truthy
+        // undefined, null, 0, '',NaN, false
+        
+        // const value = { a : 1 }
+        // const value = undefined
+        // if(value){
+        //     console.log('value가 Truthy하다');
+        // }else{
+        //     console.log('value가 falsy하다')
+        // }
+
+        const Person = {name:'John'}
+        function print(Person){
+            // if(person === undefined || person === null){
+            //     return;//아무것도안할래 -> 에러창안뜸
+            // }
+            if(!Person){
+                return;
+            }
+            console.log(Person.name)
+        }
+        // print(Person)
+        print()//undefined 또는 null때문에 에러
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sleep(ms){
+            return new Promise(resolve => setTimeout(resolve,ms))
+        }
+        const getDog = async () => {
+            await sleep(1000)
+            return '멍멍이'
+        }
+        const getRabit = async () => {
+            await sleep(500)
+            return '토끼'
+        }
+
+        const getTurtle = async () =>{
+            await sleep(3000)
+            return '거북이'
+        }
+
+        async function process(){
+            //순서대로 출력
+            // const dog = await getDog();
+            // console.log(dog)
+            // const rabit = await getRabit();
+            // console.log(rabit)
+            // const turtle = await getTurtle();
+            // console.log(turtle)
+
+            //동시에 출력
+            // const start = Date.now();
+            // const result = await Promise.all([getDog(), getRabit(), getTurtle()])
+            // console.log(Date.now() - start)
+            // console.log(result)//turtle이 3초뒤이므로 3초뒤에 셋다 배열로 출력됨
+            
+            //개, 토끼, 거북이를 따로출력
+            // const turtle = result[2]
+            // console.log(turtle)//3초뒤에 거북이출력
+            
+            // 배열비구조할당을 사용하면 코드가 깔끔해진다
+            // const [dog, rabit, turtle] = await Promise.all([getDog(), getRabit(), getTurtle()])
+            // console.log(turtle)
+
+            const first = await Promise.race([getDog(), getRabit(), getTurtle()])
+            console.log(first)
+        }
+        process()
+    </script>
+</body>
+</html>
